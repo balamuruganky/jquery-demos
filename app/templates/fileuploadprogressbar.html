@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>File Upload With ProgressBar and Status</h1>
+    <form method=post enctype=multipart/form-data class='file-upload'>
+        <input type=file name=file class='fw-attachment-field'>
+        <div class="form-actions">
+            <button type="submit" id='submit'> Upload </button>
+        </div>
+        <div class='file-upload-progress-bar'></div>
+    </form>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='file_upload_progressbar/css/ProgressBar.css') }}">
+    <script type=text/javascript src="{{ url_for('static', filename='file_upload_progressbar/jquery/ProgressBar.js') }}"> </script>
+    <script type=text/javascript src="{{ url_for('static', filename='file_upload_progressbar/jquery/FileUploadProgressBar.js') }}"> </script>
+    <script type=text/javascript>
+        var oFileUploadProgressBar = new FileUploadProgressBar({
+            $container : $('.file-upload-progress-bar'),
+            $form : $('.file-upload'),
+            $uploadButton : $('#submit'),
+            $backButton : null,
+            $fileUploadAttachment : $('.fw-attachment-field')
+        });
+    </script>
+{% endblock %}
