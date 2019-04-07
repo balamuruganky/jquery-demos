@@ -11,6 +11,7 @@ Installing Flask and venv on Ubuntu 18.04
 * source venv/bin/active
 * (venv) pip install Flask
 * (venv) python -m Flask --version
+* (venv) pip install Flask-WTF
 
 
 Acivate venv and execute
